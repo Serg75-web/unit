@@ -1,6 +1,8 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import ru.netology.service.CashbackHackService;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashbackHackServiceTest {
 
@@ -13,6 +15,42 @@ public class CashbackHackServiceTest {
         int actual = service.remain(900);
         int expected = 100;
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void returnBoundary999() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 999;
+
+        int actual = service.remain(999);
+        int expected = 1;
+
+        assertEquals(actual, expected);
+    }
+
+//    @Test
+//    public void returnBoundary1000() { // этот тест не прошел из-за дефекта
+//        CashbackHackService service = new CashbackHackService();
+//
+//        int amount = 1000;
+//
+//        int actual = service.remain(1000);
+//        int expected = 0;
+//
+//        assertEquals(actual, expected);
+//    }
+
+    @Test
+    public void returnBoundary1001() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 1001;
+
+        int actual = service.remain(1001);
+        int expected = 999;
+
+        assertEquals(actual, expected);
     }
 }
