@@ -30,17 +30,17 @@ public class CashbackHackServiceTest {
         assertEquals(actual, expected);
     }
 
-//    @Test
-//    public void returnBoundary1000() { // этот тест не прошел из-за дефекта
-//        CashbackHackService service = new CashbackHackService();
-//
-//        int amount = 1000;
-//
-//        int actual = service.remain(1000);
-//        int expected = 0;
-//
-//        assertEquals(actual, expected);
-//    }
+    @Test
+    public void returnBoundary1000() { // этот тест не прошел из-за дефекта
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 1000;
+
+        int actual = service.remain(1000);
+        int expected = 0;
+
+        assertEquals(actual, expected);
+    }
 
     @Test
     public void returnBoundary1001() {
